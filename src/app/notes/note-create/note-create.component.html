@@ -1,0 +1,56 @@
+<mat-card>
+  <form (submit)="onAddNote(postForm)" #postForm="ngForm">
+    <mat-form-field color="accent">
+      <input
+        matInput
+        type="text"
+        name="name"
+        ngModel
+        required
+        minlength="3"
+        placeholder="Name"
+        #name="ngModel"
+      />
+      <mat-error *ngIf="name.invalid">Please Enter a title</mat-error>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <textarea
+        matInput
+        rows="2"
+        name="offense"
+        ngModel
+        required
+        placeholder="Post offense"
+        #offense="ngModel"
+      ></textarea>
+      <mat-error *ngIf="offense.invalid">Please Enter a content</mat-error>
+    </mat-form-field>
+      <mat-form-field color="accent">
+        <input
+          matInput
+          type="number"
+          name="adNumber"
+          ngModel
+          required
+          minlength="3"
+          placeholder="Aadhar Number"
+          #adNumber="ngModel"
+        />
+        <mat-error *ngIf="adNumber.invalid">Please Enter a title</mat-error>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <input
+        matInput
+        type="number"
+        name="amount"
+        ngModel
+        required
+        minlength="3"
+        placeholder="Amount"
+        #amount="ngModel"
+      />
+      <mat-error *ngIf="amount.invalid">Please Enter amount</mat-error>
+  </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Save Post</button>
+  </form>
+</mat-card>
